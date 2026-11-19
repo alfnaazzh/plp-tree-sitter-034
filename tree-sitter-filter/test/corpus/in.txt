@@ -1,0 +1,50 @@
+==================
+in dengan dua nilai
+==================
+
+status in ("open", "pending")
+
+---
+
+(query
+  (in_expression
+    field: (identifier)
+    value: (string)
+    value: (string)))
+
+==================
+in dengan tiga nilai
+==================
+
+status in ("open", "pending", "closed")
+
+---
+
+(query
+  (in_expression
+    field: (identifier)
+    value: (string)
+    value: (string)
+    value: (string)))
+
+==================
+in digabung dengan and dan or
+==================
+
+a = 1 and status in ("x", "y") or b = 2
+
+---
+
+(query
+  (or_expression
+    left: (and_expression
+      left: (comparison
+        field: (identifier)
+        value: (number))
+      right: (in_expression
+        field: (identifier)
+        value: (string)
+        value: (string)))
+    right: (comparison
+      field: (identifier)
+      value: (number))))

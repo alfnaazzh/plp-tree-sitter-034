@@ -5,13 +5,21 @@ export default grammar({
   rules: {
     query: $ => $._expr,
     _expr: $ => choice(
-      $.comparison, $.and_expression, $.or_expression,
+      $.comparison, $.in_expression, $.and_expression, $.or_expression,
       $.not_expression, $.parenthesized,
     ),
     comparison: $ => seq(
       field('field', $.identifier),
       field('operator', choice('=', '!=', '>', '<', '>=', '<=')),
       field('value', $._value),
+    ),
+    in_expression: $ => seq(
+      field('field', $.identifier),
+      'in',
+      '(',
+      field('value', $._value),
+      repeat(seq(',', field('value', $._value))),
+      ')',
     ),
     or_expression: $ => prec.left(1, seq(
       field('left', $._expr), 'or', field('right', $._expr),
