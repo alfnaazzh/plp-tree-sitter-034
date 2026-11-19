@@ -1,0 +1,4 @@
+﻿@nama  baris 5: tambah
+@nama  baris 14: tanpa_param
+@nama  baris 10: sapa
+@nama  baris 19: kali

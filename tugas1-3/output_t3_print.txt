@@ -1,0 +1,6 @@
+﻿@fn  baris 11: print
+@fn  baris 20: print
+@fn  baris 24: print
+@args  baris 11: ("Halo", nama)
+@args  baris 24: (tambah(1, 2))
+@args  baris 20: (x * y)

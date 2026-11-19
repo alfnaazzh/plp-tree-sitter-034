@@ -1,0 +1,2 @@
+﻿@fn  baris 5: tambah
+@doc  baris 6: """Menjumlahkan dua angka."""

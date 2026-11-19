@@ -1,0 +1,4 @@
+﻿tambah 2
+sapa 1
+tanpa_param 0
+kali 3
