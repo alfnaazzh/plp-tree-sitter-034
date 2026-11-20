@@ -1,7 +1,7 @@
 # Tugas Awal Tree-sitter (Part 1)
 
 Mata kuliah: Programming Language Pragmatics
-Nama / NIM: [ISI]
+Nama / NIM: Alfina Azizah Anggrhaeni/251524034
 
 Repositori ini berisi enam tugas untuk memahami Tree-sitter: membaca pohon sintaks, menelusurinya, menulis query, membuat grammar sendiri, mewarnai sintaks, dan membuat alat pemeriksa kode kecil. Laporan lengkapnya ada di [`laporan/laporan.md`](laporan/laporan.md).
 
