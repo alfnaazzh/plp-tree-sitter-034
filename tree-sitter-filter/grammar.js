@@ -5,8 +5,8 @@ export default grammar({
   rules: {
     query: $ => $._expr,
     _expr: $ => choice(
-      $.comparison, $.in_expression, $.and_expression, $.or_expression,
-      $.not_expression, $.parenthesized,
+      $.comparison, $.in_expression, $.contains_expression,
+      $.and_expression, $.or_expression, $.not_expression, $.parenthesized,
     ),
     comparison: $ => seq(
       field('field', $.identifier),
@@ -20,6 +20,11 @@ export default grammar({
       field('value', $._value),
       repeat(seq(',', field('value', $._value))),
       ')',
+    ),
+    contains_expression: $ => seq(
+      field('field', $.identifier),
+      'contains',
+      field('value', $.string),
     ),
     or_expression: $ => prec.left(1, seq(
       field('left', $._expr), 'or', field('right', $._expr),

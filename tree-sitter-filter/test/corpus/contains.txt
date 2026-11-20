@@ -1,0 +1,57 @@
+==================
+contains dengan string
+==================
+
+title contains "invoice"
+
+---
+
+(query
+  (contains_expression
+    field: (identifier)
+    value: (string)))
+
+==================
+contains digabung dengan and
+==================
+
+title contains "invoice" and priority >= 2
+
+---
+
+(query
+  (and_expression
+    left: (contains_expression
+      field: (identifier)
+      value: (string))
+    right: (comparison
+      field: (identifier)
+      value: (number))))
+
+==================
+kalimat filter lengkap
+==================
+
+not archived = true and (status in ("open", "pending") or title contains "invoice") and priority >= 2
+
+---
+
+(query
+  (and_expression
+    left: (and_expression
+      left: (not_expression
+        operand: (comparison
+          field: (identifier)
+          value: (boolean)))
+      right: (parenthesized
+        (or_expression
+          left: (in_expression
+            field: (identifier)
+            value: (string)
+            value: (string))
+          right: (contains_expression
+            field: (identifier)
+            value: (string)))))
+    right: (comparison
+      field: (identifier)
+      value: (number))))

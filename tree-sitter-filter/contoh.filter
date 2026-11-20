@@ -1,1 +1,1 @@
-not archived = true
+not archived = true and (status in ("open", "pending") or title contains "invoice") and priority >= 2

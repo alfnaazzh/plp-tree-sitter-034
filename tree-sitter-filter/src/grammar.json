@@ -20,6 +20,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "contains_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "and_expression"
         },
         {
@@ -140,6 +144,31 @@
         {
           "type": "STRING",
           "value": ")"
+        }
+      ]
+    },
+    "contains_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "contains"
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string"
+          }
         }
       ]
     },
